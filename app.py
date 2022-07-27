@@ -30,13 +30,19 @@ team_panthers = []
 team_bandits = []
 team_warriors = []
 
-team_panthers.extend(experienced[0:3])
-team_bandits.extend(experienced[3:6])
-team_warriors.extend(experienced[6:9])
-team_panthers.extend(inexperienced[0:3])
-team_bandits.extend(inexperienced[3:6])
-team_warriors.extend(inexperienced[6:9])
+def balance_teams(team):
+    team.extend(experienced[0:3])
+    experienced.pop(0)
+    experienced.pop(0)
+    experienced.pop(0)
+    team.extend(inexperienced[0:3])
+    inexperienced.pop(0)
+    inexperienced.pop(0)
+    inexperienced.pop(0)
 
+balance_teams(team_panthers)
+balance_teams(team_bandits)
+balance_teams(team_warriors)
 
 def experienced_count(team):
     experienced_players = 0
@@ -64,7 +70,7 @@ def height_calculation(team):
     num_of_players = int(len(team))
     for player in team:
         all_heights.append(player["height"])
-        avg_height = round(sum(all_heights) / num_of_players)
+    avg_height = round(sum(all_heights) / num_of_players)
     print("Average height (inches): {}".format(avg_height))
 
 
