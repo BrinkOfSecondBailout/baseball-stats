@@ -11,7 +11,7 @@ def clean_data(PLAYERS):
             fixed["experience"] = True
         else:
             fixed["experience"] = False
-        fixed["name"] = player["name"]
+        fixed["name"] = str(player["name"])
         fixed["guardians"] = player["guardians"].split(" and ")
         cleaned.append(fixed)
     return cleaned
@@ -56,9 +56,11 @@ def experienced_count(team):
     print("Total inexperienced: {}".format(inexperienced_players))
 
 def players_on_team(team):
+    all_names = []
     print("\nPlayers on Team:")
     for player in team:
-        print(player["name"])
+        all_names.append(player["name"])
+    print(", ".join(all_names))
 
 def guardians_on_team(team):
     print("\nGuardians:")
