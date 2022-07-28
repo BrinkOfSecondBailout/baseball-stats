@@ -64,8 +64,10 @@ def players_on_team(team):
 
 def guardians_on_team(team):
     print("\nGuardians:")
+    all_guardians = []
     for player in team:
-        print(", ".join(player["guardians"]))
+        all_guardians.extend(player["guardians"])
+    print(", ".join(all_guardians))
 
 def height_calculation(team):
     all_heights = []
