@@ -77,68 +77,64 @@ def height_calculation(team):
     avg_height = round(sum(all_heights) / num_of_players)
     print("Average height (inches): {}".format(avg_height))
 
-
-print("BASKETBALL TEAM STATS TOOL\n\n")
-print("--- Menu ---\n\n")
-print("Here are your choices:\nA) Display Team Stats\nB) Quit")
-
-
-while True:
-    answer = input("\nEnter an option:  ")
-    if answer.lower() == "a":
-        break
-    elif answer.lower() == "b":
-        print("Thank you! Come back again!")
-        exit()
-    else:
-        print("That's not a valid choice, please select A or B!")
-
-
-while True:
-    print("\nA) Panthers\nB) Bandits\nC) Warriors")
-    answer = input("\nSelect your team:  ")
-    if answer.lower() == "a":
-        number_of_players = int(len(team_panthers))
-        print("\nTeam: Panthers Stats\n-------------\nTotal players: {}".format(number_of_players))
-        experienced_count(team_panthers)
-        height_calculation(team_panthers)
-        players_on_team(team_panthers)
-        guardians_on_team(team_panthers)
-        while True:
-            answer = input("\nPress Enter to continue:  ")
-            if answer == "":
-                break
-            else:
-                print("Invalid input, try again!")
-    elif answer.lower() == "b":
-        number_of_players = int(len(team_bandits))
-        print("\nTeam: Bandits Stats\n-------------\nTotal players: {}".format(number_of_players))
-        experienced_count(team_bandits)
-        height_calculation(team_bandits)
-        players_on_team(team_bandits)
-        guardians_on_team(team_bandits)
-        while True:
-            answer = input("\nPress Enter to continue:  ")
-            if answer == "":
-                break
-            else:
-                print("Invalid input, try again!")
-    elif answer.lower() == "c":
-        number_of_players = int(len(team_warriors))
-        print("\nTeam: Warriors Stats\n-------------\nTotal players: {}".format(number_of_players))
-        experienced_count(team_warriors)
-        height_calculation(team_warriors)
-        players_on_team(team_warriors)
-        guardians_on_team(team_warriors)
-        while True:
-            answer = input("\nPress Enter to continue:  ")
-            if answer == "":
-                break
-            else:
-                print("Invalid input, try again!")
-    else:
-        print("Oops! Not a valid option. Please select A, B, or C to see your team's stats!")
-
-
 if __name__ == "__main__":
-    (main)
+    print("BASKETBALL TEAM STATS TOOL\n\n")
+    print("--- Menu ---\n\n")
+    print("Here are your choices:\nA) Display Team Stats\nB) Quit")
+
+
+    while True:
+        answer = input("\nEnter an option:  ")
+        if answer.lower() == "a":
+            break
+        elif answer.lower() == "b":
+            print("Thank you! Come back again!")
+            exit()
+        else:
+            print("That's not a valid choice, please select A or B!")
+
+
+    while True:
+        print("\nA) Panthers\nB) Bandits\nC) Warriors")
+        answer = input("\nSelect your team:  ")
+        if answer.lower() == "a":
+            number_of_players = int(len(team_panthers))
+            print("\nTeam: Panthers Stats\n-------------\nTotal players: {}".format(number_of_players))
+            experienced_count(team_panthers)
+            height_calculation(team_panthers)
+            players_on_team(team_panthers)
+            guardians_on_team(team_panthers)
+            while True:
+                answer = input("\nPress Enter to continue:  ")
+                if answer == "":
+                    break
+                else:
+                    print("Invalid input, try again!")
+        elif answer.lower() == "b":
+            number_of_players = int(len(team_bandits))
+            print("\nTeam: Bandits Stats\n-------------\nTotal players: {}".format(number_of_players))
+            experienced_count(team_bandits)
+            height_calculation(team_bandits)
+            players_on_team(team_bandits)
+            guardians_on_team(team_bandits)
+            while True:
+                answer = input("\nPress Enter to continue:  ")
+                if answer == "":
+                    break
+                else:
+                    print("Invalid input, try again!")
+        elif answer.lower() == "c":
+            number_of_players = int(len(team_warriors))
+            print("\nTeam: Warriors Stats\n-------------\nTotal players: {}".format(number_of_players))
+            experienced_count(team_warriors)
+            height_calculation(team_warriors)
+            players_on_team(team_warriors)
+            guardians_on_team(team_warriors)
+            while True:
+                answer = input("\nPress Enter to continue:  ")
+                if answer == "":
+                    break
+                else:
+                    print("Invalid input, try again!")
+        else:
+            print("Oops! Not a valid option. Please select A, B, or C to see your team's stats!")
