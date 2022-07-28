@@ -1,6 +1,10 @@
 from constants import TEAMS
 from constants import PLAYERS
 
+def team_names(TEAMS):
+    team_one = TEAMS[0]
+    team_two = TEAMS[1]
+    team_three = TEAMS[2]
 
 def clean_data(PLAYERS):
     cleaned = []
@@ -26,9 +30,9 @@ def main():
         else:
             inexperienced.append(player)
 
-    team_panthers = []
-    team_bandits = []
-    team_warriors = []
+    team_one = []
+    team_two = []
+    team_three = []
 
     def balance_teams(team):
         team.extend(experienced[0:3])
@@ -40,9 +44,9 @@ def main():
         inexperienced.pop(0)
         inexperienced.pop(0)
 
-    balance_teams(team_panthers)
-    balance_teams(team_bandits)
-    balance_teams(team_warriors)
+    balance_teams(team_one)
+    balance_teams(team_two)
+    balance_teams(team_three)
 
     def experienced_count(team):
         experienced_players = 0
@@ -96,12 +100,12 @@ def main():
         print("\nA) Panthers\nB) Bandits\nC) Warriors")
         answer = input("\nSelect your team:  ")
         if answer.lower() == "a":
-            number_of_players = int(len(team_panthers))
+            number_of_players = int(len(team_one))
             print("\nTeam: Panthers Stats\n-------------\nTotal players: {}".format(number_of_players))
-            experienced_count(team_panthers)
-            height_calculation(team_panthers)
-            players_on_team(team_panthers)
-            guardians_on_team(team_panthers)
+            experienced_count(team_one)
+            height_calculation(team_one)
+            players_on_team(team_one)
+            guardians_on_team(team_one)
             while True:
                 answer = input("\nPress Enter to continue:  ")
                 if answer == "":
@@ -109,12 +113,12 @@ def main():
                 else:
                     print("Invalid input, try again!")
         elif answer.lower() == "b":
-            number_of_players = int(len(team_bandits))
+            number_of_players = int(len(team_two))
             print("\nTeam: Bandits Stats\n-------------\nTotal players: {}".format(number_of_players))
-            experienced_count(team_bandits)
-            height_calculation(team_bandits)
-            players_on_team(team_bandits)
-            guardians_on_team(team_bandits)
+            experienced_count(team_two)
+            height_calculation(team_two)
+            players_on_team(team_two)
+            guardians_on_team(team_two)
             while True:
                 answer = input("\nPress Enter to continue:  ")
                 if answer == "":
@@ -122,12 +126,12 @@ def main():
                 else:
                     print("Invalid input, try again!")
         elif answer.lower() == "c":
-            number_of_players = int(len(team_warriors))
+            number_of_players = int(len(team_three))
             print("\nTeam: Warriors Stats\n-------------\nTotal players: {}".format(number_of_players))
-            experienced_count(team_warriors)
-            height_calculation(team_warriors)
-            players_on_team(team_warriors)
-            guardians_on_team(team_warriors)
+            experienced_count(team_three)
+            height_calculation(team_three)
+            players_on_team(team_three)
+            guardians_on_team(team_three)
             while True:
                 answer = input("\nPress Enter to continue:  ")
                 if answer == "":
